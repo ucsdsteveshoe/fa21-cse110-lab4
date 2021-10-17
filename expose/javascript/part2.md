@@ -1,0 +1,34 @@
+### Steven Shoemaker
+### CSE 110 Lab 4 - Part 2
+
+1. At line 12, the console will output `3`. This line specifies that the index for the above for loop will be printed - the for loop ran a total of 3 times, incrementing the i varaible at the end of it's scope 3 total times (0 incremented 3 times = 3). The i varaible was declared with the `var` keyword, so it is still accessible from line 12 because its scope is the wrapping function (lines 2 to 17)/
+
+2. At line 13, the console will output `150`. This line specifies that the value of `discountedPrice` calculated in the above for loop will be printed. The value is recalculated for each run of the for loop, meaning the most recent run will contain the current value. On this run, the value of i will be 2, meaning the last index of the prices arguement (300) will be used in the equation. Therefore `discountedPrice` at line 13 should = 300 * (1 - 0.5) = 150. The `discountedPrice` varaible was declared with the `var` keyword, so it is still accessible from line 12 because its scope is the wrapping function (lines 2 to 17).
+
+3. At line 14, the console will output `150`. This line specifies that the value of `finalPrice` calculated in the above for loop will be printed. The value is recalculated for each run of the for loop, meaning the most recent run will contain the current value. As established in the above question, the value of discountedPrice is 150. Therefore `finalPrice` at line 14 should = Math.round(15000) / 100 = 150. (Note: Math.round just rounds to the nearest integer, and 15000 is already an integer). The `discountedPrice` varaible was declared with the `var` keyword, so it is still accessible from line 14 because its scope is the wrapping function (lines 2 to 17).
+
+4. The function will return an array of values, in this case `[50, 100, 150]`. Building off of the processes I explained above, this function takes in an array of numbers and a discount value, applies the discount to each number, rounds away the 3rd decimal place of each value (presumably to remove anything less than one cent), and then returns an array of the discounted values. In our case, a 0.5 (or 50%) discount applied to input `[100, 200, 300]` is the output array `[50, 100, 150]`
+
+5. ERROR! Line 12 is attempting to access a variable that does not exist within it's scope (the wrapping function on lines 2 to 17). In this case, it's trying to access the `i` varaible declared on line 6. The special syntax of for loops essentially considers all values declared within the following parentheses to be part of the scope of the for loop, not outside of the for loops. Varaibles declared with the `let` keyword are defined only in their respective block/scope, meaning that i does not exist outside of the for loop on lines 6 - 10. Therefore, it cannot be accessed on line 12.
+
+6. ERROR! `let` defines a variable for that block/scope, not the entire function (unlike `var`). In this case, the `discountedPrice` variable is scoped by the for loop on lines 6 - 10 (as it is declared on line 7), and can't be accessed from line 13.
+
+7. At line 14, the console will output `150`. This line specifies that the value of `finalPrice` calculated in the above for loop will be printed. The value is recalculated for each run of the for loop, meaning the most recent run will contain the current value. As established in the above question, the value of discountedPrice is 150. Therefore `finalPrice` at line 14 should = Math.round(15000) / 100 = 150. (Note: Math.round just rounds to the nearest integer, and 15000 is already an integer). The `discountedPrice` varaible was declared with the `let` keyword, so it is still accessible from line 14 because its scope is the wrapping function (lines 2 to 17). While the varaible was SET within the scope of the for loop, this does not prevent it from being accessed by the scope it was declared in.
+
+8. The function will return an array of values, in this case `[50, 100, 150]`. Building off of the processes I explained in questions 1 to 3, this function takes in an array of numbers and a discount value, applies the discount to each number, rounds away the 3rd decimal place of each value (presumably to remove anything less than one cent), and then returns an array of the discounted values. In our case, a 0.5 (or 50%) discount applied to input `[100, 200, 300]` is the output array `[50, 100, 150]`. While the index used to loop through values and the calculation of their final price (variables `i` and `finalPrice`) are not accessible by the entire function and it's return statement, the varaible used to store their final price IS (as it's declared in the scope of the entire function). Therefore, it can safetly be returned.
+
+9. ERROR! Line 11 is attempting to access a variable that does not exist within it's scope (the wrapping function on lines 2 to 15). In this case, it's trying to access the `i` varaible declared on line 6. The special syntax of for loops essentially considers all values declared within the following parentheses to be part of the scope of the for loop, not outside of the for loops. Varaibles declared with the `let` keyword are defined only in their respective block/scope, meaning that i does not exist outside of the for loop on lines 6 - 10. Therefore, it cannot be accessed on line 11.
+
+10. At line 12, the console will output `3`. This line specifies that the `length` variable be printed. Line 4 defines the length variable to store the total number of values in the input `prices` array argument - a total of 3 values. The length variable is declared on line 4 using the `const` keyword, which restricts it to it's current block/scope - the function defined on lines 2 to 15. This means that this varaible is accessible from line 12.
+
+11. The function will return an array of values, in this case `[50, 100, 150]`. Building off of the processes I explained in questions 1 to 3, this function takes in an array of numbers and a discount value, applies the discount to each number, and then returns an array of the discounted values. In our case, a 0.5 (or 50%) discount applied to input `[100, 200, 300]` is the output array `[50, 100, 150]`. While the index used to loop through values (`i`) is not accessible by the entire function and it's return statement, the varaible used to store their final price (`discounted`) IS (as it's declared in the scope of the entire function). Therefore, it can safetly be returned.
+
+// NOTE: C specified CALLING the function, not just getting it
+12.
+A. student.name
+B. student["Grad Year"]
+C. student.greeting()
+D. student["Favorite Teacher"].name
+E. student.courseLoad[0]
+
+13A.  
