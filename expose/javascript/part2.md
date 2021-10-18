@@ -1,7 +1,7 @@
 ### Steven Shoemaker
 ### CSE 110 Lab 4 - Part 2
 
-1. At line 12, the console will output `3`. This line specifies that the index for the above for loop will be printed - the for loop ran a total of 3 times, incrementing the i varaible at the end of it's scope 3 total times (0 incremented 3 times = 3). The i varaible was declared with the `var` keyword, so it is still accessible from line 12 because its scope is the wrapping function (lines 2 to 17)/
+1. At line 12, the console will output `3`. This line specifies that the index for the above for loop will be printed - the for loop ran a total of 3 times, incrementing the i varaible at the end of it's scope 3 total times (0 incremented 3 times = 3). The i varaible was declared with the `var` keyword, so it is still accessible from line 12 because its scope is the wrapping function (lines 2 to 17).
 
 2. At line 13, the console will output `150`. This line specifies that the value of `discountedPrice` calculated in the above for loop will be printed. The value is recalculated for each run of the for loop, meaning the most recent run will contain the current value. On this run, the value of i will be 2, meaning the last index of the prices arguement (300) will be used in the equation. Therefore `discountedPrice` at line 13 should = 300 * (1 - 0.5) = 150. The `discountedPrice` varaible was declared with the `var` keyword, so it is still accessible from line 12 because its scope is the wrapping function (lines 2 to 17).
 
