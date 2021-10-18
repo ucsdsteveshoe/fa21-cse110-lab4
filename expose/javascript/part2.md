@@ -31,4 +31,56 @@ C. student.greeting()
 D. student["Favorite Teacher"].name
 E. student.courseLoad[0]
 
-13A.  
+13.
+A. ‘3’ + 2 = '32'
+// 2 is converted to a String, concatenating it to the end of '3' makes the String '32'.
+
+B. ‘3’ - 2 = 1
+// '3' is converted to a Number, 3. 3 - 2 = 1, which makes the number 1.
+
+C. 3 + null = 3
+// null is converted to a Number, 0. 3 + 0 = 3, which makes the number 3.
+
+D. ‘3’ + null = '3null'
+// null is converted to a String, concatenating it to the end of '3' makes the String '3null'.
+
+E. true + 3 = 4
+// true is converted to a Number, 1. 1 + 3 = 4, which makes the number 4.
+
+F. false + null = 0
+// False and null are both converted to Numbers - both convert directly to zero. 0 + 0 = 0, which maakes the number 0.
+
+G. '3' + undefined = '3undefined'
+// undefined is converted to a String, concatenating it to the end of '3' makes the String '3undefined'.
+
+H. '3' - undefined = NaN
+// '3' and undefined are both converted to Numbers. '3' converts to 3, and undefined converts to NaN. Any operations done with NaN continue to output NaN, so 3 - NaN outputs NaN.
+
+14.
+A. ‘2’ > 1 >= true
+// '2' is converted to a Number, 2. 2 is greater than 1, so the statement is true.
+
+B. ‘2’ < ‘12’ => false
+// Strings are compared in lexicographical order. The ASCII value of the '1' in '12' is  less than the ASCII value of the '2' in '2'. Therefore '2' should be greater, and the statement exaluates to false.
+
+C. 2 == ‘2’ => true
+// The non-strict equality operator allows '2' to convert to a Number, 2. 2 is equal to itself, so the statement is true.
+
+D. 2 === ‘2’ => false
+// The strict equality operator checks type equality first. The first value (2) is a Number and the second ('2') is a String. These types are not the same, therefore the operator returns false.
+
+E. true == 2 => false
+// true is converted to a Number, 1. 1 is not the same as 2, so the statement is false.
+
+F. true === Boolean(2) => true
+// In the order of operations for programming, evaluation comes first. The Boolean equivalent of a nozero number is true. The strict equality operator checks type equality first. The first value (true) is a Boolean and the second (true) is a Boolean as well. Their values (true and true) are equal as well, meaning the operator returns true.
+
+15. The difference between the non-strict equality operator (==) and the strict equality operator (===) is that the later does not check after type coversion. Basically, the non-strict operator will attempt to convert one or both of its inputs to the same type so that they can be compared. The strict equality operator does not do this - its inputs need to be of the same value AND the same type for it to return true.
+
+16. `.\part2-question16.js`
+
+17. The return value will be the array `[2, 4, 6]`. The for loop in the `modifyArray` function indexes over each value in the `array` parameter and saves it to a function-scope variable (`newArr`) so it can safely return these changes. The only thing the for loop does specifically to each element in `array` is save the element's value AFTER the callback function has been run on it. Specifically, it will save each element once the element has been run through `doSomething`, which just multiplies the value by 2. Therefore, each element in the return array will be double it's original value in the input array. So, the input `[1, 2, 3]` becomes `[2, 4, 6]`.
+
+18. `.\part2-question18.js`
+
+19. The output is `1 4 3 2`. (Note: They are delimited by newlines rather than spaces in the acctual output)
